@@ -1,0 +1,245 @@
+body {
+  background-color: #f5f5f5;
+}
+* {
+  box-sizing: border-box;
+}
+ul {
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+}
+img {
+  width: 100%;
+  height: auto;
+}
+a {
+  text-decoration: none;
+}
+#header {
+  background-color: #424242;
+  padding-top: 70px;
+  padding-bottom: 70px;
+}
+#header .container {
+  width: 70%;
+}
+#header .row > div {
+  padding-top: 20px;
+}
+#header .col-sm-3 {
+  text-align: center;
+}
+#header .col-sm-3 img {
+  width: 117px;
+  height: auto;
+}
+#header .col-sm-5 p {
+  margin: 0;
+  color: #ffd366;
+}
+#header .col-sm-5 p:nth-child(3) {
+  margin-top: 10px;
+}
+#header .col-sm-5 input {
+  width: 100%;
+  border: 2px solid #ffd366;
+  border-radius: 8px;
+  background-color: #646464;
+  padding: 5px 10px;
+  color: #fff;
+}
+#header .col-sm-5 input::-webkit-input-placeholder {
+  color: #a39d9d;
+}
+#header .col-sm-4 {
+  text-align: center;
+}
+#header .col-sm-4 .default {
+  display: inline-block;
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  line-height: 120px;
+  text-align: center;
+  text-decoration: none;
+  background-color: #ffd366;
+  color: black;
+  font-size: 28px;
+}
+#header .col-sm-4 .default a {
+  display: block;
+  text-decoration: none;
+  color: black;
+}
+#header .col-sm-4 .default:hover {
+  box-shadow: 0px 0px 4px 4px rgba(255, 211, 102, 0.6);
+  transition: all 0.2s;
+}
+#header .col-sm-4 .default:active {
+  background-color: #dea821;
+  box-shadow: 0px 0px;
+}
+#header .col-sm-4 .result {
+  display: none;
+  position: relative;
+  width: 120px;
+  height: 120px;
+  line-height: 120px;
+  border-radius: 50%;
+  text-align: center;
+  font-size: 28px;
+}
+#header .col-sm-4 .result.green {
+  color: #a4e16f;
+  border-color: #a4e16f;
+  border: 5px solid #a4e16f;
+}
+#header .col-sm-4 .result.green .bmiVal {
+  color: #a4e16f;
+}
+#header .col-sm-4 .result.blue {
+  color: #65cbfb;
+  border-color: #65cbfb;
+  border: 5px solid #65cbfb;
+}
+#header .col-sm-4 .result.blue .bmiVal {
+  color: #65cbfb;
+}
+#header .col-sm-4 .result.lightorange {
+  color: #ffd09e;
+  border-color: #ffd09e;
+  border: 5px solid #ffd09e;
+}
+#header .col-sm-4 .result.lightorange .bmiVal {
+  color: #ffd09e;
+}
+#header .col-sm-4 .result.orange {
+  color: #ff6c03;
+  border-color: #ff6c03;
+  border: 5px solid #ff6c03;
+}
+#header .col-sm-4 .result.orange .bmiVal {
+  color: #ff6c03;
+}
+#header .col-sm-4 .result.red {
+  color: #ff1200;
+  border-color: #ff1200;
+  border: 5px solid #ff1200;
+}
+#header .col-sm-4 .result.red .bmiVal {
+  color: #ff1200;
+}
+#header .col-sm-4 .result .bmi {
+  margin: 0;
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 14px;
+}
+#header .col-sm-4 .result .range {
+  margin: 0;
+  position: absolute;
+  top: 0;
+  right: 0;
+  transform: translateX(120%);
+}
+#header .col-sm-4 .result a {
+  display: block;
+  position: absolute;
+  bottom: 0;
+  right: 12px;
+}
+#header .col-sm-4 .result img {
+  width: 14px;
+  height: auto;
+}
+#content {
+  margin-bottom: 140px;
+}
+#content .container {
+  width: 65%;
+}
+#content h3 {
+  margin: 0;
+  padding: 20px 0;
+  text-align: center;
+}
+#content .green {
+  border-left: 8px solid #a4e16f;
+}
+#content .blue {
+  border-left: 8px solid #65cbfb;
+}
+#content .lightorange {
+  border-left: 8px solid #ffd09e;
+}
+#content .orange {
+  border-left: 8px solid #ff6c03;
+}
+#content .red {
+  border-left: 8px solid #ff1200;
+}
+#content .row {
+  margin-bottom: 15px;
+  padding: 12px 0;
+  position: relative;
+  padding-right: 8px;
+  background-color: #fff;
+  font-size: 20px;
+}
+#content .row > div:not(.not):not(.threePoint) {
+  font-family: 'Nunito', sans-serif;
+}
+#content .row > div:last-child {
+  text-align: right;
+  font-size: 12px;
+  line-height: 28px;
+}
+#content .row em {
+  font-style: normal;
+  font-size: 12px;
+  padding-right: 8px;
+}
+#content .threePoint {
+  position: absolute;
+  right: 15px;
+}
+#content .threePoint a {
+  text-decoration: none;
+}
+#content .threePoint > a {
+  position: absolute;
+  color: #615d5d;
+  display: block;
+  font-size: 28px;
+  width: 16x;
+}
+#content .threePoint .hideBtn {
+  display: none;
+  position: absolute;
+  right: -60px;
+  top: 30%;
+  padding: 2px 3px;
+  background-color: #615d5d;
+  color: #fff;
+}
+#content .threePoint .hideBtn a {
+  text-decoration: none;
+  color: #fff;
+}
+#content .threePoint .hideBtn a:hover {
+  color: #ffd366;
+}
+#footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: #424242;
+  padding: 10px 0;
+  text-align: center;
+}
+#footer img {
+  width: 117px;
+}

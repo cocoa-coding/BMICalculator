@@ -1,0 +1,269 @@
+@import "color.less";
+
+body {
+    background-color: #f5f5f5;
+}
+
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+ul {
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+}
+
+img {
+    width: 100%;
+    height: auto;
+}
+
+a {
+    text-decoration: none;
+}
+
+#header {
+    background-color: #424242;
+    padding-top: 70px;
+    padding-bottom: 70px;
+    .container {
+        width: 70%;
+    }
+    .row {
+        >div{
+            padding-top: 20px;
+        }
+    }
+    .col-sm-3 {
+        text-align: center;
+        img {
+            width: 117px;
+            height: auto;
+        }
+    }
+    .col-sm-5 {
+        p {
+            margin: 0;  
+            color: @gold-color;
+            &:nth-child(3){
+                margin-top: 10px;
+             }
+        }
+        input {
+            width: 100%;
+            border: 2px solid @gold-color;
+            border-radius: 8px;
+            background-color: #646464;
+            padding: 5px 10px;
+            color:  #fff;
+        }
+        input::-webkit-input-placeholder {
+            color: #a39d9d;
+        }
+    }
+
+    .col-sm-4 { 
+        text-align: center;
+        .default {
+            display:  inline-block;
+            border-radius: 50%;
+            width: 120px;
+            height: 120px;
+            line-height: 120px;
+            text-align: center;
+            text-decoration: none;
+            background-color: @gold-color;
+            color: black;
+            font-size: 28px;
+            a {
+                display: block;
+                text-decoration: none;
+                color: black;
+            }
+            &:hover {
+                box-shadow:0px 0px 4px 4px rgba(255,211,102,.6);
+                transition: all .2s;
+            }
+            &:active {
+                background-color:  #dea821;
+                box-shadow:0px 0px;
+            }
+        }
+
+        .result {
+            display: none;
+            position: relative;
+            width: 120px;
+            height: 120px;
+            line-height: 120px;
+            border-radius: 50%;
+            text-align: center;
+            font-size: 28px;
+
+            &.green {
+                color:#a4e16f;
+                border-color: #a4e16f;
+                border: 5px solid  #a4e16f;
+                .bmiVal {
+                    color:#a4e16f;
+                }
+            }
+
+            &.blue {
+                color:#65cbfb;
+                border-color: #65cbfb;
+                border: 5px solid  #65cbfb;
+                .bmiVal {
+                    color:#65cbfb;
+                }
+            }
+            &.lightorange {
+                color:#ffd09e;
+                border-color: #ffd09e;
+                border: 5px solid  #ffd09e;
+                .bmiVal {
+                    color:#ffd09e;
+                }
+            }
+            &.orange{
+                color:#ff6c03;
+                border-color: #ff6c03;
+                border: 5px solid  #ff6c03;
+                .bmiVal {
+                    color:#ff6c03;
+                }
+            }
+            &.red {
+                color:#ff1200;
+                border-color: #ff1200;
+                border: 5px solid  #ff1200;
+                .bmiVal {
+                    color:#ff1200;
+                }
+            }
+
+            .bmi {
+                margin: 0;
+                position: absolute;
+                top: 20%;
+                left: 50%;
+                transform: translateX(-50%);
+                font-size: 14px;
+            }
+            .range {
+                margin: 0;
+                position: absolute;
+                top: 0;
+                right: 0;
+                transform: translateX(120%);
+            }
+            a {
+                display: block;
+                position: absolute;
+                bottom: 0;
+                right: 12px;
+            }
+            img {
+                width: 14px;
+                height: auto;
+
+            }
+        }
+    }
+}
+
+#content {
+    margin-bottom: 140px;
+    .container {
+        width: 65%;
+    }
+    h3 {
+        margin: 0;
+        padding: 20px 0;
+        text-align: center;
+    }
+
+    .green {
+        border-left: 8px solid #a4e16f;
+    }
+    .blue {
+        border-left: 8px solid #65cbfb; 
+    }
+    .lightorange {
+        border-left: 8px solid #ffd09e; 
+    }
+    .orange{
+        border-left: 8px solid #ff6c03;
+    }
+    .red {
+        border-left: 8px solid #ff1200;
+    }
+
+    .row {
+        margin-bottom: 15px;
+        padding: 12px 0;
+        position: relative;
+        padding-right: 8px;
+        background-color: #fff;
+        font-size: 20px;
+        >div:not(.not):not(.threePoint) {
+            font-family: 'Nunito', sans-serif;
+        }
+        >div{
+            &:last-child {
+                text-align: right;
+                font-size: 12px; 
+                line-height: 28px;
+            }
+        }
+        em {
+            font-style: normal;
+            font-size: 12px;
+            padding-right: 8px;
+        }
+    }
+    .threePoint {
+        position: absolute;
+        right: 15px;
+        a {text-decoration: none;}
+        >a {
+            position: absolute;
+            color: rgb(97, 93, 93);
+            display: block;
+            font-size: 28px;
+            width: 16x; //這行會失效，為何？在 position: absolute; 後，要怎麼擴大本體的寬度?
+        }
+        .hideBtn {
+            display: none;
+            position: absolute;
+            right: -60px;  //為什麼在 -45px 以上 就會變直行?
+            top: 30%; //為什麼 % 不能動、px可以動?
+            padding: 2px 3px;
+            background-color: rgb(97, 93, 93);
+            color: #fff;
+            a {
+                text-decoration: none;
+                color: #fff;
+                &:hover {
+                    color: @gold-color;
+                }
+            }
+        }
+    }
+
+}  // end of #content
+
+#footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: #424242;
+    padding: 10px 0;
+    text-align: center;
+    img {
+        width: 117px;
+    }
+}
