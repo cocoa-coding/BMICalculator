@@ -144,12 +144,33 @@ a {
   top: 0;
   right: 0;
   transform: translateX(120%);
+  font-size: 20px;
 }
 #header .col-sm-4 .result a {
+  border: 3px solid #424242;
+  border-radius: 50% 50%;
+  width: 28px;
+  height: 28px;
+  line-height: 20px;
   display: block;
   position: absolute;
-  bottom: 0;
-  right: 12px;
+  bottom: 5px;
+  right: 1px;
+}
+#header .col-sm-4 .result a.green {
+  background-color: #a4e16f;
+}
+#header .col-sm-4 .result a.blue {
+  background-color: #65cbfb;
+}
+#header .col-sm-4 .result a.lightorange {
+  background-color: #ffd09e;
+}
+#header .col-sm-4 .result a.orange {
+  background-color: #ff6c03;
+}
+#header .col-sm-4 .result a.red {
+  background-color: #ff1200;
 }
 #header .col-sm-4 .result img {
   width: 14px;

@@ -26,7 +26,7 @@ a {
 }
 
 #header {
-    background-color: #424242;
+    background-color: @header-background-color;
     padding-top: 70px;
     padding-bottom: 70px;
     .container {
@@ -104,44 +104,44 @@ a {
             font-size: 28px;
 
             &.green {
-                color:#a4e16f;
-                border-color: #a4e16f;
-                border: 5px solid  #a4e16f;
+                color: @green;
+                border-color: @green;
+                border: 5px solid   @green;
                 .bmiVal {
-                    color:#a4e16f;
+                    color: @green;
                 }
             }
 
             &.blue {
-                color:#65cbfb;
-                border-color: #65cbfb;
-                border: 5px solid  #65cbfb;
+                color: @blue;
+                border-color: @blue;
+                border: 5px solid  @blue;
                 .bmiVal {
-                    color:#65cbfb;
+                    color: @blue;
                 }
             }
             &.lightorange {
-                color:#ffd09e;
-                border-color: #ffd09e;
-                border: 5px solid  #ffd09e;
+                color: @lightorange;
+                border-color: @lightorange;
+                border: 5px solid @lightorange;
                 .bmiVal {
-                    color:#ffd09e;
+                    color: @lightorange;
                 }
             }
             &.orange{
-                color:#ff6c03;
-                border-color: #ff6c03;
-                border: 5px solid  #ff6c03;
+                color: @orange;
+                border-color: @orange;
+                border: 5px solid  @orange;
                 .bmiVal {
-                    color:#ff6c03;
+                    color:@orange;
                 }
             }
             &.red {
-                color:#ff1200;
-                border-color: #ff1200;
-                border: 5px solid  #ff1200;
+                color: @red;
+                border-color: @red;
+                border: 5px solid  @red;
                 .bmiVal {
-                    color:#ff1200;
+                    color:@red;
                 }
             }
 
@@ -159,12 +159,35 @@ a {
                 top: 0;
                 right: 0;
                 transform: translateX(120%);
+                font-size: 20px;
             }
             a {
+                border: 3px solid @header-background-color;
+                border-radius: 50% 50%;
+                // background-color: #fff;
+                width: 28px;
+                height: 28px;
+                line-height: 20px;
                 display: block;
                 position: absolute;
-                bottom: 0;
-                right: 12px;
+                bottom: 5px;
+                right: 1px;
+                &.green {
+                    background-color: @green;
+                }
+                &.blue {
+                    background-color: @blue; 
+                }
+                &.lightorange {
+                    background-color: @lightorange; 
+                }
+                &.orange{
+                    background-color: @orange;
+                }
+                &.red {
+                    background-color: @red;
+                }
+
             }
             img {
                 width: 14px;
@@ -187,19 +210,19 @@ a {
     }
 
     .green {
-        border-left: 8px solid #a4e16f;
+        border-left: 8px solid @green;
     }
     .blue {
-        border-left: 8px solid #65cbfb; 
+        border-left: 8px solid @blue; 
     }
     .lightorange {
-        border-left: 8px solid #ffd09e; 
+        border-left: 8px solid @lightorange; 
     }
     .orange{
-        border-left: 8px solid #ff6c03;
+        border-left: 8px solid @orange;
     }
     .red {
-        border-left: 8px solid #ff1200;
+        border-left: 8px solid @red;
     }
 
     .row {
@@ -260,7 +283,7 @@ a {
     position: fixed;
     bottom: 0;
     width: 100%;
-    background-color: #424242;
+    background-color: @header-background-color;
     padding: 10px 0;
     text-align: center;
     img {

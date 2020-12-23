@@ -2,15 +2,15 @@
 var data = JSON.parse(localStorage.getItem('dataArray')) || [];
 var tallInput = document.querySelector('.tall');
 var weightInput = document.querySelector('.weight');
-
 var defaultBtn = document.querySelector('.default a');
+
 
 tallInput.addEventListener('blur' , checkInput , false);
 weightInput.addEventListener('blur' , checkInput , false);
 document.querySelector('.result a').addEventListener("click" , refreshPage , false);
-
 defaultBtn.addEventListener('click' , calBMI , false);
 document.addEventListener("click" , hide, false);
+
 
 updataPage();
 
@@ -35,7 +35,7 @@ function calBMI(){
         alert('身高與體重皆須填寫');
         return;
     }
-    // updateView
+    // change header btn
     var resultNode = document.querySelector('.result');
     document.querySelector('.default').style.display = "none";
     resultNode.style.display = "inline-block";
@@ -44,6 +44,7 @@ function calBMI(){
     var switchF = switchFun(BMI);
     resultNode.querySelector('.range').textContent = switchF.comment;
     resultNode.classList.add(switchF.color);
+    resultNode.querySelector('a').classList.add(switchF.color);
 
     //update array
     var dataObject = {
