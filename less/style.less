@@ -164,7 +164,6 @@ a {
             a {
                 border: 3px solid @header-background-color;
                 border-radius: 50% 50%;
-                // background-color: #fff;
                 width: 28px;
                 height: 28px;
                 line-height: 20px;
@@ -257,13 +256,13 @@ a {
             color: rgb(97, 93, 93);
             display: block;
             font-size: 28px;
-            width: 16x; //這行會失效，為何？在 position: absolute; 後，要怎麼擴大本體的寬度?
+            width: 16px; 
+            text-align: center;
         }
         .hideBtn {
             display: none;
             position: absolute;
-            right: -60px;  //為什麼在 -45px 以上 就會變直行?
-            top: 30%; //為什麼 % 不能動、px可以動?
+            right: -60px;
             padding: 2px 3px;
             background-color: rgb(97, 93, 93);
             color: #fff;
@@ -276,7 +275,6 @@ a {
             }
         }
     }
-
 }  // end of #content
 
 #footer {

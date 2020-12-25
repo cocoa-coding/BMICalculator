@@ -70,8 +70,8 @@ function addItem(i, item) {
     var BMI = item.BMIData;
     var today = item.todayData;
 
-    var newNode = document.createElement('div');  //新 div
-    document.querySelector('.data').prepend(newNode); //指定新節點 插入位置
+    var newNode = document.createElement('div');
+    document.querySelector('.data').prepend(newNode);
     newNode.setAttribute('class' , 'row');
 
     var switchF = switchFun(BMI);

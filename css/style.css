@@ -235,13 +235,13 @@ a {
   color: #615d5d;
   display: block;
   font-size: 28px;
-  width: 16x;
+  width: 16px;
+  text-align: center;
 }
 #content .threePoint .hideBtn {
   display: none;
   position: absolute;
   right: -60px;
-  top: 30%;
   padding: 2px 3px;
   background-color: #615d5d;
   color: #fff;
