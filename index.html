@@ -10,33 +10,31 @@
 <!-- Optional theme -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
 
-<!-- Latest compiled and minified JavaScript -->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Nunito&display=swap" rel="stylesheet"> 
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/style.css">
-    <title>BMI</title>
+    <title>BMI ing</title>
 </head>
 <body>
-  
+<div id="app">
     <div id="header">
         <div class="container">
             <div class="row">
-                <div class="col-sm-3"><img src="../BMICalculator/images/BMICLogo.png" alt=""></div>
+                <div class="col-sm-3"><img src="images/BMICLogo.png" alt=""></div>
                 <div class="col-sm-5">
                     <p>身高 cm</p>
-                    <input class="tall" type="text" placeholder="請輸入身高">
+                    <input class="tall" type="text" placeholder="請輸入身高" v-model="tallValue">
                     <p>體重 kg</p>
-                    <input class="weight" type="text" placeholder="請輸入體重">
+                    <input class="weight" type="text" placeholder="請輸入體重" v-model="weightValue">
                 </div>
                 <div class="col-sm-4">
-                     <div class="default"><a href="#">看結果</a></div>
-                     <div class="result green">
-                        <p class="bmiVal">20.90</p>
+                     <div class="default" v-if="showDefaultBtn"><a href="#" @click.stop.prevent="calBMI">看結果</a></div>
+                     <div class="result" :class="colorClass" v-if="showResultBtn">
+                        <p class="bmiVal">{{bmiValClassContent}}</p>
                         <p class="bmi">BMI</p>
-                        <p class="range">理想</p>
-                        <a href=""><img src="../BMICalculator/images/icons_loop.png" alt=""></a>
+                        <p class="range">{{rangeClassContent}}</p>
+                        <a href="" :class="colorClass" @click.stop.prevent="restoreInitial"><img src="images/icons_loop.png" alt=""></a>
                      </div>
                 </div>
             </div>
@@ -46,40 +44,33 @@
     <div id="content">
         <div class="container">
             <h3>BMI 紀錄</h3>
+            <div class="delAll" ><a href="#" @click="delAllItem" v-if="delAll">全部刪除</a></div>
             <div class="data">
-                <div class="row red">
-                    <div class="threePoint">
-                        <a class="showBtn" href="#">⋮</a>
-                        <div class="hideBtn"><a class="delA" href="" data-num="10">刪除</a></div>
+              
+                <template v-for="(item,index) in dataArray">     
+                    <div class="row" :class="item.colorData" >
+                        <div class="threePoint" @click="showAndDelBtn(index,$event)">
+                            <a class="showBtn" href="#">⋮</a>
+                            <div class="hideBtn"><a class="delA" href="#">刪除</a></div>
+                        </div>
+                        <div class="col-sm-2 not">{{item.rangeData}}</div>
+                        <div class="col-sm-2"><em>BMI</em>{{item.BMIData}}</div>
+                        <div class="col-sm-3"><em>weight</em>{{item.weightData}}</div>
+                        <div class="col-sm-3"><em>height</em>{{item.tallData}}</div>
+                        <div class="col-sm-2">{{item.todayData}}</div>
                     </div>
-                    <div class="col-sm-2 not">紅色警戒</div>
-                    <div class="col-sm-2" data-bmi="10"><em>BMI</em>301.41</div>
-                    <div class="col-sm-3" data-weight="10"><em>weight</em>456.0kg</div>
-                    <div class="col-sm-3" data-tall="10"><em>height</em>123.0cm</div>
-                    <div class="col-sm-2" data-today="10">12-16-2020</div>
-                </div>
-                
-                <div class="orange row">
-                    <div class="threePoint">
-                        <a class="showBtn" href="#">⋮</a>
-                        <div class="hideBtn"><a class="delA" href="#" data-num="10">刪除</a></div>
-                    </div>
-                    <div class="col-sm-2 not">減肥</div>
-                    <div class="col-sm-2" data-bmi="10"><em>BMI</em>20.90</div>       
-                    <div class="col-sm-3" data-weight="10"><em>weight</em>70kg</div>    
-                    <div class="col-sm-3" data-weight="10"><em>height</em>180cm</div>    
-                    <div class="col-sm-2" data-weight="10">06-19-2017</div>
-                </div>
-
+                </template>
             </div>
         </div>
     </div>
 
     <div id="footer">
-        <img src="../BMICalculator/images/BMICLogo.png" alt="logo">    
+        <img src="images/BMICLogo.png" alt="logo">    
     </div>
+</div>
 
-    <script src="js/all.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="js/all.js"></script>
 
 </body>
 </html>
