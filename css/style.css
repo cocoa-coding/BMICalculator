@@ -42,6 +42,10 @@ a {
 #header .col-sm-5 p:nth-child(3) {
   margin-top: 10px;
 }
+#header .col-sm-5 em {
+  font-style: normal;
+  color: red;
+}
 #header .col-sm-5 input {
   width: 100%;
   border: 2px solid #ffd366;

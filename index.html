@@ -14,7 +14,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Nunito&display=swap" rel="stylesheet"> 
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/style.css">
-    <title>BMI ing</title>
+    <title>BMI Calculator</title>
 </head>
 <body>
 <div id="app">
@@ -26,7 +26,7 @@
                     <p>身高 cm</p>
                     <input class="tall" type="text" placeholder="請輸入身高" v-model="tallValue">
                     <p>體重 kg</p>
-                    <input class="weight" type="text" placeholder="請輸入體重" v-model="weightValue">
+                    <input class="weight" type="text" placeholder="請輸入體重" v-model="weightValue"><em></em>
                 </div>
                 <div class="col-sm-4">
                      <div class="default" v-if="showDefaultBtn"><a href="#" @click.stop.prevent="calBMI">看結果</a></div>

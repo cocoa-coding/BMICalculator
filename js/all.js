@@ -12,19 +12,18 @@ new Vue({
         delAll: true,
     },
     mounted(){
-        if (this.dataArray.length == 0){
-            this.delAll = false;
-        } else {
-            this.delAll = true;
-        }
-
+        this.delAllCondition();
+    },
+    updated(){
+        this.delAllCondition();
     },
     methods: {
         calBMI(){
-            if (this.tallValue == "" || this.weightValue =="") {
-                alert('身高與體重皆須填寫');
+            if (this.tallValue === "" || this.weightValue ==="") {
+                this.$el.querySelector('#header em').textContent = '身高與體重皆須填寫';
                 return;
             }
+            this.$el.querySelector('#header em').textContent = '';
 
             //get dataArray
             let tallData = parseInt(this.tallValue).toFixed(1);
@@ -103,6 +102,7 @@ new Vue({
                     event.preventDefault();
                      this.dataArray.splice(index,1);
                      localStorage.setItem('dataArray',JSON.stringify(this.dataArray));
+                     event.target.parentNode.parentNode.lastElementChild.style.display="none";
                      break;
             }
         },
@@ -110,7 +110,15 @@ new Vue({
             this.dataArray = [];
             localStorage.setItem('dataArray',JSON.stringify(this.dataArray));
             this.delAll = false;
+        },
+        delAllCondition(){
+            if (this.dataArray.length === 0){
+                this.delAll = false;
+            } else {
+                this.delAll = true;
+            }
         }
+
     }
 });
 
